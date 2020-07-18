@@ -59,7 +59,37 @@ class DoublyLinkedList:
             i = i.next
 
     def delete(self, key):
-        pass
+        i=self.head
+        while(i!=None):
+            if(i.data==key and i==self.head):
+                if(i.next is None):
+                    i=None
+                    self.head=None
+                    return
+                else:
+                    x=i.next
+                    i.next=None
+                    x.prev=None
+                    i=None
+                    self.head=x
+                    return
+            elif(i.data==key):
+                if(i.next!=None):
+                    x=i.next
+                    pre=i.prev
+                    pre.next=i
+                    i.prev=pre
+                    i.next=None
+                    i.prev=None
+                    i=None
+                    return
+                else:
+                    pre=i.prev
+                    pre.next=None
+                    i.prev=None
+                    i=None
+                    return
+            i=i.next
 
     def print_list(self):
         i = self.head
