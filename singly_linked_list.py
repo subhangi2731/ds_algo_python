@@ -10,7 +10,7 @@ class SinglyLinkedList:
 
     def insert_at_beginning(self, data):
         firstNode = Node(data)
-        if(self.head == None):
+        if self.head is None:
             self.head = firstNode
         else:
             i = self.head
@@ -19,7 +19,7 @@ class SinglyLinkedList:
 
     def insert_at_last(self, data):
         newNode = Node(data)
-        if(self.head == None):
+        if self.head is None:
             self.head = newNode
         else:
             i = self.head
@@ -28,13 +28,13 @@ class SinglyLinkedList:
             i.next = newNode
 
     def delete_first(self):
-        if(self.head == None):
+        if self.head is None:
             print("Cannot delete, linked list is empty")
         else:
             self.head = self.head.next
 
     def print_list(self):
-        if(self.head == None):
+        if self.head is None:
             print("Cannot print, linked list is empty")
         else:
             p = self.head
