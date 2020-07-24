@@ -9,6 +9,16 @@ class HashTable:
             h += ord(char)
         return h % self.MAX
 
+    def add(self,key,value):
+        a = self.get_hash(key)
+        self.arr[a] = value
+
+    def get_value(self,key):
+        a = self.get_hash(key)
+        print(self.arr[a])
 
 t=HashTable()
 print(t.get_hash('apple'))
+t.add('march',28)
+print(t.arr)
+t.get_value('march')
