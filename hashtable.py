@@ -17,6 +17,10 @@ class HashTable:
         a = self.get_hash(key)
         print(self.arr[a])
 
+    def delete(self,key):
+        a = self.get_value(key)
+        self.arr[a]=None
+
 t=HashTable()
 print(t.get_hash('apple'))
 t.add('march',28)
